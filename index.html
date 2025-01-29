@@ -3,21 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page - Mi App</title>
+    <title>Landing Page - GreenLens</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
-            color: white;
+            position: relative;
+            color: rgb(0, 0, 0);
             text-align: center;
             padding: 100px 20px;
+            font-size: 20px;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1439396874305-9a6ba25de6c6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGF0aHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        .logo {
+            width: 210px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: -3px 3px 10px #000000;
+        }
+        .navbar {
+            background: linear-gradient(45deg, #2e8b57, #3cb371);
+            padding: 10px 0;
+        }
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white !important;
+        }
+        .nav-link {
+            color: white !important;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #d4edda !important;
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+        .navbar-toggler-icon {
+            filter: invert(1);
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">Mi App</a>
+            <a class="navbar-brand" href="#">GreenLens</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,6 +68,8 @@
                     <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
                     <li class="nav-item"><a class="nav-link" href="#screenshots">Capturas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#download">Descargar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#download">Contáctanos</a></li>
+
                 </ul>
             </div>
         </div>
@@ -33,57 +77,66 @@
 
     <header class="hero">
         <div class="container">
-            <h1>Descubre Mi App</h1>
-            <p>La mejor aplicación para simplificar tu vida</p>
-            <a href="#download" class="btn btn-primary btn-lg">Descargar ahora</a>
+            <div class="row align-items-center">
+                <div class="col-md-5 text-center">
+                    <img src="logo.png" class="logo img-fluid">
+                </div>
+                <div class="col-md-7 text-center">
+                    <h1>Explora la naturaleza con GreenLens</h1>
+                    <p>Descubre rutas naturales y aprende a identificar especies en tu entorno</p>
+                    <a href="#download" class="btn btn-success btn-lg">Descargar ahora</a>
+                </div>
+            </div>
         </div>
     </header>
 
     <section id="features" class="py-5">
         <div class="container text-center">
-            <h2>Características</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <i class="bi bi-speedometer2 fs-1"></i>
-                    <h4>Rápida y eficiente</h4>
-                    <p>Optimizada para un rendimiento máximo.</p>
+                    <i class="bi bi-map fs-1"></i>
+                    <h4>Rutas naturales</h4>
+                    <p>Encuentra senderos y caminos ecológicos cercanos a ti.</p>
                 </div>
                 <div class="col-md-4">
-                    <i class="bi bi-shield-lock fs-1"></i>
-                    <h4>Segura</h4>
-                    <p>Tus datos están siempre protegidos.</p>
+                    <i class="bi bi-flower1 fs-1"></i>
+                    <h4>Identificación de especies</h4>
+                    <p>Utiliza la app para reconocer flora y fauna en tiempo real.</p>
                 </div>
                 <div class="col-md-4">
-                    <i class="bi bi-ui-checks fs-1"></i>
-                    <h4>Fácil de usar</h4>
-                    <p>Diseño intuitivo para todos los usuarios.</p>
+                    <i class="bi bi-tree fs-1"></i>
+                    <h4>Conéctate con la naturaleza</h4>
+                    <p>Aprende sobre la biodiversidad mientras exploras.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="screenshots" class="py-5 bg-light">
+    <section id="screenshots" class="py-5 bg-success-subtle">
         <div class="container text-center">
-            <h2>Capturas de pantalla</h2>
             <div class="row">
-                <div class="col-md-4"><img src="https://source.unsplash.com/300x600/?app" class="img-fluid rounded"></div>
-                <div class="col-md-4"><img src="https://source.unsplash.com/300x600/?mobile" class="img-fluid rounded"></div>
-                <div class="col-md-4"><img src="https://source.unsplash.com/300x600/?technology" class="img-fluid rounded"></div>
+                <div class="col-md-4"><img src="https://source.unsplash.com/300x600/?trail,nature" class="img-fluid rounded"></div>
+                <div class="col-md-4"><img src="https://source.unsplash.com/300x600/?plants,forest" class="img-fluid rounded"></div>
+                <div class="col-md-4"><img src="https://source.unsplash.com/300x600/?wildlife,animals" class="img-fluid rounded"></div>
+
             </div>
         </div>
     </section>
 
-    <section id="download" class="py-5 text-center">
-        <div class="container">
-            <h2>Descarga la App</h2>
+    <section id="download" class="py-5 text-center row">
+        <div class="container col-md-6 text-center">
+            <h2>Descarga GreenLens</h2>
             <p>Disponible en iOS y Android</p>
             <a href="#" class="btn btn-dark">App Store</a>
             <a href="#" class="btn btn-success">Google Play</a>
         </div>
+        <div class="col-md-6 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png">
+        </div>
     </section>
 
     <footer class="text-center py-3 bg-dark text-light">
-        <p>&copy; 2025 Mi App. Todos los derechos reservados.</p>
+        <p>&copy; 2025 GreenLens. Todos los derechos reservados.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
